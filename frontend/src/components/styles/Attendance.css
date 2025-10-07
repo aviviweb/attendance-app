@@ -1,0 +1,94 @@
+/* Attendance Component Styles */
+.attendance-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.attendance-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.attendance-form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.attendance-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.check-in-btn {
+  background: #28a745;
+  color: white;
+}
+
+.check-out-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.attendance-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.attendance-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status-indicator {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.status-checked-in {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-checked-out {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.location-info {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.location-info h4 {
+  margin: 0 0 10px 0;
+  color: #495057;
+}
+
+.location-details {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .attendance-container {
+    padding: 15px;
+  }
+  
+  .attendance-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}

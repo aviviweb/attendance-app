@@ -1,0 +1,93 @@
+/* עיצוב מפה */
+.map-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.map-header h3 {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.map {
+  position: relative;
+  background: #f0f0f0;
+}
+
+.map-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+  z-index: 1000;
+}
+
+.map-loading .loading-spinner {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+  .map-header {
+    padding: 15px;
+  }
+  
+  .map-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .location-info {
+    font-size: 0.8rem;
+  }
+  
+  .map {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-header {
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .map-header h3 {
+    font-size: 1rem;
+  }
+  
+  .location-info {
+    font-size: 0.75rem;
+  }
+  
+  .map {
+    height: 250px !important;
+  }
+}

@@ -1,0 +1,266 @@
+/* עיצוב בדיקת פנים */
+.face-check-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.face-check-modal {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+.face-check-header h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.face-check-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.face-check-content {
+  margin-bottom: 24px;
+}
+
+/* ספירה לאחור */
+.countdown-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.countdown-circle {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #2196F3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1s linear infinite;
+}
+
+.countdown-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2196F3;
+}
+
+.instructions {
+  text-align: right;
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  border-right: 4px solid #2196F3;
+}
+
+.instructions p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* צילום */
+.capture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.webcam {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.capture-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.capture-light {
+  width: 20px;
+  height: 20px;
+  background: #f44336;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* מוכן לצילום */
+.ready-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ready-icon {
+  font-size: 4rem;
+}
+
+.capture-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.capture-btn:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.face-check-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.skip-btn {
+  background: #f44336;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+.skip-btn:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* אנימציות */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+  .face-check-overlay {
+    padding: 10px;
+  }
+  
+  .face-check-modal {
+    padding: 24px;
+  }
+  
+  .face-check-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .face-check-header p {
+    font-size: 1rem;
+  }
+  
+  .countdown-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .countdown-number {
+    font-size: 2rem;
+  }
+  
+  .webcam {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .ready-icon {
+    font-size: 3rem;
+  }
+  
+  .capture-btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .face-check-modal {
+    padding: 20px;
+  }
+  
+  .face-check-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .face-check-header p {
+    font-size: 0.9rem;
+  }
+  
+  .countdown-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .countdown-number {
+    font-size: 1.5rem;
+  }
+  
+  .webcam {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .ready-icon {
+    font-size: 2.5rem;
+  }
+  
+  .capture-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .skip-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}

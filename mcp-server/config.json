@@ -1,0 +1,140 @@
+{
+  "name": "attendance-fraud-detection",
+  "version": "1.0.0",
+  "description": "MCP Server configuration for fraud detection",
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
+  "tools": [
+    {
+      "name": "check_location_fraud",
+      "description": "בודק הונאות GPS במיקום עובד",
+      "parameters": {
+        "employeeId": {
+          "type": "string",
+          "description": "מזהה עובד"
+        },
+        "locations": {
+          "type": "array",
+          "description": "מערך מיקומים עם timestamps",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lat": { "type": "number" },
+              "lng": { "type": "number" },
+              "timestamp": { "type": "number" },
+              "accuracy": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "analyze_movement_pattern",
+      "description": "מנתח דפוסי תזוזה של עובד",
+      "parameters": {
+        "userId": {
+          "type": "string",
+          "description": "מזהה משתמש"
+        },
+        "timeRange": {
+          "type": "string",
+          "description": "טווח זמן לניתוח"
+        },
+        "locations": {
+          "type": "array",
+          "description": "מיקומים לניתוח"
+        }
+      }
+    },
+    {
+      "name": "detect_device_sharing",
+      "description": "זיהוי שיתוף מכשיר בין עובדים",
+      "parameters": {
+        "userId": {
+          "type": "string",
+          "description": "מזהה משתמש"
+        },
+        "deviceFingerprint": {
+          "type": "object",
+          "description": "טביעת מכשיר נוכחית"
+        },
+        "previousFingerprints": {
+          "type": "array",
+          "description": "טביעות מכשיר קודמות"
+        }
+      }
+    },
+    {
+      "name": "trigger_random_face_check",
+      "description": "הפעלת בדיקת פנים אקראית",
+      "parameters": {
+        "userId": {
+          "type": "string",
+          "description": "מזהה משתמש"
+        },
+        "probability": {
+          "type": "number",
+          "description": "הסתברות לבדיקה (0-1)",
+          "default": 0.3
+        }
+      }
+    },
+    {
+      "name": "analyze_attendance_patterns",
+      "description": "ניתוח דפוסי נוכחות חריגים",
+      "parameters": {
+        "employeeId": {
+          "type": "string",
+          "description": "מזהה עובד"
+        },
+        "attendanceHistory": {
+          "type": "array",
+          "description": "היסטוריית נוכחות"
+        },
+        "timeRange": {
+          "type": "string",
+          "description": "טווח זמן לניתוח"
+        }
+      }
+    },
+    {
+      "name": "detect_wifi_spoofing",
+      "description": "זיהוי WiFi spoofing",
+      "parameters": {
+        "userId": {
+          "type": "string",
+          "description": "מזהה משתמש"
+        },
+        "currentWiFi": {
+          "type": "array",
+          "description": "רשתות WiFi נוכחיות"
+        },
+        "knownWiFi": {
+          "type": "array",
+          "description": "רשתות WiFi מוכרות"
+        }
+      }
+    }
+  ],
+  "settings": {
+    "fraudThresholds": {
+      "maxGpsSpeed": 100,
+      "stagnationTime": 15,
+      "maxMovement": 10,
+      "deviceChangeSeverity": "HIGH",
+      "wifiAnomalyThreshold": 3,
+      "patternAnomalyThreshold": 0.7
+    },
+    "logging": {
+      "level": "info",
+      "file": "logs/fraud-detection.log"
+    },
+    "cronJobs": {
+      "dailyFraudCheck": "0 9 * * *",
+      "weeklyAttendanceCheck": "0 10 * * 1"
+    }
+  }
+}

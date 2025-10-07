@@ -1,0 +1,349 @@
+/* עיצוב רישום נוכחות */
+.attendance-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.attendance-header h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.time-display {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.current-time {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4CAF50;
+  font-family: 'Courier New', monospace;
+}
+
+.current-date {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.attendance-status {
+  margin-bottom: 32px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 12px;
+  gap: 16px;
+}
+
+.status-indicator.checked-in {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  color: #155724;
+}
+
+.status-indicator.checked-out {
+  background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+  color: #721c24;
+}
+
+.status-icon {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.status-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.location-section {
+  margin-bottom: 32px;
+}
+
+.location-section h3 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.location-info {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.location-coords {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.location-coords span {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.location-status {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.location-status.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.location-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8d7da;
+  color: #721c24;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.error-icon {
+  font-size: 1.5rem;
+}
+
+.error-text {
+  font-weight: 600;
+}
+
+.location-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff3cd;
+  color: #856404;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.location-warning {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff3cd;
+  color: #856404;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.warning-icon {
+  font-size: 1.5rem;
+}
+
+.warning-text {
+  font-weight: 600;
+}
+
+.attendance-actions {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.checkin-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 16px 48px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.checkin-btn:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.checkout-btn {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  padding: 16px 48px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(135deg, #d32f2f, #c62828);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+}
+
+.attendance-history {
+  border-top: 2px solid #f0f0f0;
+  padding-top: 24px;
+}
+
+.attendance-history h3 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-right: 4px solid #4CAF50;
+}
+
+.history-time {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #333;
+  min-width: 80px;
+}
+
+.history-action {
+  flex: 1;
+  margin: 0 16px;
+  color: #666;
+}
+
+.history-status {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.history-status.success {
+  color: #4CAF50;
+}
+
+.history-status.warning {
+  color: #ff9800;
+}
+
+.history-status.error {
+  color: #f44336;
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+  .attendance-container {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  
+  .attendance-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .current-time {
+    font-size: 2rem;
+  }
+  
+  .current-date {
+    font-size: 1rem;
+  }
+  
+  .status-indicator {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .status-icon {
+    font-size: 2.5rem;
+  }
+  
+  .status-text {
+    font-size: 1.1rem;
+  }
+  
+  .checkin-btn, .checkout-btn {
+    padding: 14px 36px;
+    font-size: 1.1rem;
+  }
+  
+  .location-coords {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .attendance-container {
+    padding: 16px;
+    margin: 0 5px;
+  }
+  
+  .attendance-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .current-time {
+    font-size: 1.8rem;
+  }
+  
+  .current-date {
+    font-size: 0.9rem;
+  }
+  
+  .status-indicator {
+    padding: 16px;
+  }
+  
+  .status-icon {
+    font-size: 2rem;
+  }
+  
+  .status-text {
+    font-size: 1rem;
+  }
+  
+  .checkin-btn, .checkout-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .history-time {
+    min-width: auto;
+  }
+  
+  .history-action {
+    margin: 0;
+  }
+}

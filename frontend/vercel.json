@@ -1,0 +1,61 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "REACT_APP_FIREBASE_API_KEY": "@firebase-api-key",
+    "REACT_APP_FIREBASE_AUTH_DOMAIN": "@firebase-auth-domain",
+    "REACT_APP_FIREBASE_PROJECT_ID": "@firebase-project-id",
+    "REACT_APP_FIREBASE_STORAGE_BUCKET": "@firebase-storage-bucket",
+    "REACT_APP_FIREBASE_MESSAGING_SENDER_ID": "@firebase-messaging-sender-id",
+    "REACT_APP_FIREBASE_APP_ID": "@firebase-app-id",
+    "REACT_APP_MAPBOX_TOKEN": "@mapbox-token",
+    "REACT_APP_BACKEND_URL": "@backend-url"
+  },
+  "headers": [
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://your-backend-url.herokuapp.com/api/$1"
+    }
+  ]
+}

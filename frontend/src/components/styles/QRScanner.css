@@ -1,0 +1,277 @@
+/* QR Scanner Component Styles */
+.qr-scanner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.qr-scanner-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.qr-scanner-header h1 {
+  font-size: 28px;
+  margin: 0 0 10px 0;
+}
+
+.qr-scanner-header p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.scanner-container {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.scanner-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+}
+
+.qr-reader {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+}
+
+.scanner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  border-radius: 15px;
+}
+
+.scanner-frame {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #007bff;
+  border-radius: 15px;
+  position: relative;
+}
+
+.scanner-frame::before,
+.scanner-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #007bff;
+}
+
+.scanner-frame::before {
+  top: -3px;
+  left: -3px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.scanner-frame::after {
+  bottom: -3px;
+  right: -3px;
+  border-left: none;
+  border-top: none;
+}
+
+.scanner-instructions {
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.scanner-instructions h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.scanner-instructions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.scanner-instructions li {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+.scan-result {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  min-width: 300px;
+}
+
+.result-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.result-success {
+  color: #28a745;
+}
+
+.result-error {
+  color: #dc3545;
+}
+
+.result-message {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.result-details {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #218838;
+}
+
+.permission-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.permission-error h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.permission-error p {
+  margin: 0 0 15px 0;
+  font-size: 14px;
+}
+
+.permission-error button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.permission-error button:hover {
+  background: #c82333;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .qr-scanner-container {
+    padding: 15px;
+  }
+  
+  .qr-scanner-header h1 {
+    font-size: 24px;
+  }
+  
+  .scanner-container {
+    padding: 15px;
+  }
+  
+  .qr-reader {
+    height: 250px;
+  }
+  
+  .scanner-frame {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 200px;
+  }
+}

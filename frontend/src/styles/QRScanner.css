@@ -1,0 +1,360 @@
+/* עיצוב סורק QR */
+.qr-scanner-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qr-scanner-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.qr-scanner-header h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.qr-scanner-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.qr-scanner-content {
+  margin-bottom: 32px;
+}
+
+/* מצב לא פעיל */
+.scanner-inactive {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.scanner-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.scanner-inactive h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.scanner-inactive p {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.start-scan-btn {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.start-scan-btn:hover {
+  background: linear-gradient(135deg, #1976D2, #1565C0);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+}
+
+/* מצב פעיל */
+.scanner-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.scanner-frame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.scanner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.scanner-corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #2196F3;
+}
+
+.scanner-corner.top-left {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.scanner-corner.top-right {
+  top: 20px;
+  right: 20px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.scanner-corner.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  border-right: none;
+  border-top: none;
+}
+
+.scanner-corner.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+}
+
+.scanner-instructions {
+  text-align: center;
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  border-right: 4px solid #2196F3;
+}
+
+.scanner-instructions p {
+  margin: 8px 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.stop-scan-btn {
+  background: #f44336;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.stop-scan-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-1px);
+}
+
+/* תוצאת סריקה אחרונה */
+.last-scan-result {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  border-right: 4px solid #4CAF50;
+}
+
+.last-scan-result h3 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.scan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scan-data, .scan-time, .scan-location {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.scan-data strong, .scan-time strong, .scan-location strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* היסטוריית סריקות */
+.scan-history {
+  border-top: 2px solid #f0f0f0;
+  padding-top: 24px;
+}
+
+.scan-history h3 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-right: 4px solid #2196F3;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.history-time {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #333;
+  min-width: 80px;
+  font-size: 0.9rem;
+}
+
+.history-data {
+  flex: 1;
+  margin: 0 16px;
+  color: #666;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+.history-location {
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+  .qr-scanner-container {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  
+  .qr-scanner-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .qr-scanner-header p {
+    font-size: 1rem;
+  }
+  
+  .scanner-inactive {
+    padding: 30px 15px;
+  }
+  
+  .scanner-icon {
+    font-size: 3rem;
+  }
+  
+  .scanner-inactive h3 {
+    font-size: 1.3rem;
+  }
+  
+  .start-scan-btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+  
+  .scanner-corner {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .scanner-corner.top-left,
+  .scanner-corner.top-right {
+    top: 15px;
+  }
+  
+  .scanner-corner.bottom-left,
+  .scanner-corner.bottom-right {
+    bottom: 15px;
+  }
+  
+  .scanner-corner.top-left,
+  .scanner-corner.bottom-left {
+    left: 15px;
+  }
+  
+  .scanner-corner.top-right,
+  .scanner-corner.bottom-right {
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr-scanner-container {
+    padding: 16px;
+    margin: 0 5px;
+  }
+  
+  .qr-scanner-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .qr-scanner-header p {
+    font-size: 0.9rem;
+  }
+  
+  .scanner-inactive {
+    padding: 20px 10px;
+  }
+  
+  .scanner-icon {
+    font-size: 2.5rem;
+  }
+  
+  .scanner-inactive h3 {
+    font-size: 1.2rem;
+  }
+  
+  .scanner-inactive p {
+    font-size: 0.9rem;
+  }
+  
+  .start-scan-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .stop-scan-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .history-time {
+    min-width: auto;
+  }
+  
+  .history-data {
+    margin: 0;
+  }
+  
+  .scan-info {
+    font-size: 0.8rem;
+  }
+}

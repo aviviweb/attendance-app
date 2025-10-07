@@ -1,0 +1,334 @@
+/* PWA Installer - עיצוב מקצועי */
+.pwa-installer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: slideInUp 0.5s ease-out;
+}
+
+.pwa-installer.hidden {
+  display: none;
+}
+
+.installer-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.installer-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.installer-text h3 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.installer-text p {
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.install-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  text-align: right;
+}
+
+.install-benefits li {
+  color: #555;
+  margin: 8px 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.installer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.install-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.install-btn.primary {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.install-btn.secondary {
+  background: rgba(0, 102, 221, 0.1);
+  color: #0066dd;
+  border: 2px solid #0066dd;
+}
+
+.install-btn.close {
+  background: rgba(108, 117, 125, 0.1);
+  color: #6c757d;
+  border: 2px solid #6c757d;
+}
+
+.install-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.action-btn.share {
+  background: rgba(13, 202, 240, 0.1);
+  color: #0dcaf0;
+  border: 2px solid #0dcaf0;
+}
+
+.action-btn.stats {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border: 2px solid #ffc107;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.install-stats {
+  background: rgba(0, 102, 221, 0.05);
+  border-radius: 0 0 20px 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #0066dd;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.install-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #0066dd, #004466);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.install-trigger:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* הודעת הצלחה */
+.install-success-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(40, 167, 69, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  z-index: 2000;
+  animation: slideInRight 0.5s ease-out;
+  max-width: 350px;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notification-icon {
+  font-size: 2rem;
+}
+
+.notification-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.notification-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.notification-close:hover {
+  opacity: 1;
+}
+
+/* אנימציות */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* רספונסיבי */
+@media (max-width: 768px) {
+  .pwa-installer {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .installer-content {
+    padding: 20px;
+  }
+  
+  .installer-icon {
+    font-size: 2.5rem;
+  }
+  
+  .installer-text h3 {
+    font-size: 1.3rem;
+  }
+  
+  .install-benefits {
+    text-align: center;
+  }
+  
+  .install-benefits li {
+    justify-content: center;
+  }
+  
+  .install-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .install-trigger {
+    bottom: 10px;
+    right: 10px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .install-success-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .installer-content {
+    padding: 15px;
+  }
+  
+  .installer-icon {
+    font-size: 2rem;
+  }
+  
+  .installer-text h3 {
+    font-size: 1.2rem;
+  }
+  
+  .install-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .action-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+

@@ -1,0 +1,28 @@
+{
+  "name": "attendance-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for fraud detection in attendance app",
+  "main": "mcp.js",
+  "scripts": {
+    "start": "node mcp.js",
+    "dev": "nodemon mcp.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "geolib": "^3.3.4",
+    "winston": "^3.11.0",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "mcp",
+    "fraud-detection",
+    "attendance",
+    "gps",
+    "ai"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
